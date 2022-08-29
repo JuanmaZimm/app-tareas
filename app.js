@@ -7,11 +7,9 @@ let accion = process.argv[2]
 switch (accion) {
     case "listar":
         console.log('Tareas:')
-        for (i = 0; i < arrayTareas.length; i++) {
-            console.log(
-                (i + 1 + '. ' + arrayTareas[i].titulo + ' - ' + arrayTareas[i].estado)
-            )
-        }
+        arrayTareas.forEach(function (element, index) {
+            console.log((index + 1) + '. ' + element.titulo + ' - ' + element.estado)
+        });
         break;
     case undefined:
         console.log('Tienes que poner una accion')
