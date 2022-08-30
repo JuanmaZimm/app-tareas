@@ -14,5 +14,9 @@
     {
         "titulo": "Salir de Oro",
         "estado": "Imposible"
+    },
+    {
+        "titulo": "Limpiar la casa",
+        "estado": "pendiente"
     }
 ]
