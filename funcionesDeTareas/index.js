@@ -14,6 +14,13 @@ let archivoTareas = {
         let archivo = this.leerArchivo();
         archivo.push(tarea);
         this.escribirJSON(archivo);
+    },
+    filtrarPorEstado: function (estado) {
+        let archivo = this.leerArchivo();
+        let tareasFiltradas = archivo.filter(function (elemento) {
+            return elemento.estado == estado;
+        })
+        return tareasFiltradas;
     }
 }
 

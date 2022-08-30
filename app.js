@@ -20,9 +20,19 @@ switch (accion) {
         let tituloTarea = process.argv[3]
         let tareaNueva = new Tarea(tituloTarea)
         archivo.guardarTarea(tareaNueva)
-        console.log("Creando:")
-        console.log('Tarea: ' + tareaNueva.titulo)
-        console.log('Estado: ' + tareaNueva.estado)
+        console.log("Nueva tarea creada:")
+        console.log("--------------------")
+        console.log(tareaNueva.titulo + ' -> ' + tareaNueva.estado)
+        console.log("--------------------")
+        break;
+    case 'filtrar':
+        let estado = process.argv[3]
+        let tareasFiltradas = archivo.filtrarPorEstado(estado)
+        console.log('Tareas ' + estado)
+        console.log("--------------------")
+        tareasFiltradas.forEach(function (element, index) {
+            console.log((index + 1) + '. ' + element.titulo)
+        });
         break;
     case undefined:
         console.log('Tienes que poner una accion')
